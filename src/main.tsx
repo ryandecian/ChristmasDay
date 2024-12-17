@@ -2,7 +2,8 @@ import { createRoot } from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './index.css'
 import App from './App.tsx'
-import ChristmasDay from './pages/ChristmasDay.tsx'
+import PageChristmasDay from './pages/PageChristmasDay.tsx'
+import PageHome from './pages/PageHome.tsx'
 
 const router =  createBrowserRouter([
   {
@@ -10,7 +11,7 @@ const router =  createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <ChristmasDay />,
+        element: <PageHome />,
       },
     ],
   },
