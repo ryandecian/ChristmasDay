@@ -15,17 +15,17 @@ git status
 # Demande le message de commit
 read -p "Entrez votre message de commit : " msg
 
-# Récupère uniquement les fichiers modifiés
-files=$(git diff --name-only)
+# Récupère les fichiers modifiés, nouveaux et supprimés
+files=$(git ls-files --modified --deleted --others --exclude-standard)
 
-# Vérifie s'il y a des fichiers modifiés
+# Vérifie s'il y a des fichiers à ajouter
 if [ -z "$files" ]; then
-  echo "❌ Aucun fichier modifié. Commit annulé."
+  echo "❌ Aucun fichier modifié, supprimé ou nouveau fichier à ajouter. Commit annulé."
   exit 1
 fi
 
-# Ajoute uniquement les fichiers modifiés
-git add $files
+# Ajoute les fichiers modifiés, nouveaux et supprimés
+git add -A
 
 # Crée un fichier temporaire pour le message de commit
 echo "$msg" > .gitmessage.txt
