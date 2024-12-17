@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import "./PageChristmasDay.css"
+import "./PageNewYear.css"
 
 function PageNewYear() {
   const calculateTimeDay = () => {
