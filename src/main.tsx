@@ -4,7 +4,6 @@ import './index.css'
 import App from './App.tsx'
 import PageChristmasDay from './pages/PageChristmasDay.tsx'
 import PageNewYear from './pages/PageNewYear.tsx'
-import PageNextChristmasDay from './pages/PageNextChristmasDay.tsx'
 
 const router =  createBrowserRouter([
   {
@@ -17,10 +16,6 @@ const router =  createBrowserRouter([
       {
         path: "/page-new-year",
         element: <PageNewYear />,
-      },
-      {
-        path: "/page-next-christmas-day",
-        element: <PageNextChristmasDay />,
       },
     ],
   },
