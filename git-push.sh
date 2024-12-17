@@ -1,14 +1,44 @@
+#Attention, pour lancer cette commande il faudra : 
+
+#Lancer la commande suivante dans le terminal git :
+# chmod +x git-push.sh
+#Copier coller cette ligne dans package.json dans script :
+# "commit": "./git-push.sh"
+#Exécution de cette commande avec :
+# npm run commit
+
 #!/bin/bash
 
-# Vérifie si un message de commit a été passé
-if [ -z "$1" ]; then
-  echo "Erreur : Vous devez fournir un message pour le commit."
+# Affiche l'état actuel du dépôt
+git status
+
+# Demande le message de commit
+read -p "Entrez votre message de commit : " msg
+
+# Récupère uniquement les fichiers modifiés
+files=$(git diff --name-only)
+
+# Vérifie s'il y a des fichiers modifiés
+if [ -z "$files" ]; then
+  echo "❌ Aucun fichier modifié. Commit annulé."
   exit 1
 fi
 
-# Exécute les commandes git
-git add .
-git commit -m "$1"
-git push
+# Ajoute uniquement les fichiers modifiés
+git add $files
 
-# Exécute maintenant la commande dans le terminal : chmod +x git-push.sh
+# Crée un fichier temporaire pour le message de commit
+echo "$msg" > .gitmessage.txt
+
+# Effectue le commit
+git commit -F .gitmessage.txt
+
+# Supprime le fichier temporaire
+rm .gitmessage.txt
+
+# Récupère le nom de la branche actuelle
+branch=$(git rev-parse --abbrev-ref HEAD)
+
+# Pousse sur la branche courante
+echo "✅ Commit réussi, envoi sur la branche '$branch'..."
+git push origin "$branch" || { echo "❌ Erreur : Push échoué."; exit 1; }
