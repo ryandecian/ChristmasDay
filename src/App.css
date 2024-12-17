@@ -1,5 +1,7 @@
 body {
   background-color: red;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: white;
 }
 
 .App {
@@ -7,4 +9,6 @@ body {
   flex-direction: column;
   justify-content: start;
   align-items: center;
+  height: 100%;
+  width: 100%;
 }
