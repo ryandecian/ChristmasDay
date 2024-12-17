@@ -1,4 +1,7 @@
 .ChristmasDay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     font-size: 2rem;
     margin-top: 50px;
