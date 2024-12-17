@@ -7,7 +7,7 @@ function Nav() {
         <nav>
         <Link to="/" className="NavLink">Noël</Link>
         <Link to="/page-new-year" className="NavLink">Nouvel an</Link>
-        <Link to="/" className="NavLink">Noël prochain</Link>
+        <Link to="/page-next-christmas-day" className="NavLink">Noël prochain</Link>
         </nav>
     )
 }
