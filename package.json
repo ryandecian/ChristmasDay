@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "commit": "sh -c 'read -p \"Entrez votre message de commit : \" msg; git add . && git commit -m \"$msg\" && git push'"
+    "commit": "sh -c 'read -p \"Entrez votre message de commit : \" msg; git add . && git commit -m \"$msg\" || echo \"❌ Erreur : Aucun changement détecté par git. Veuillez modifier des fichiers avant de committer.\" && exit 1; git push'"
   },
   "dependencies": {
     "react": "^18.3.1",
