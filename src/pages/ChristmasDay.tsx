@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import "./ChristmasDay.css"
 
 function ChristmasDay() {
   const calculateTimeDay = () => {
@@ -33,7 +34,7 @@ function ChristmasDay() {
  //setInterval() Exécution d'une fonction a interval régulier en milisecond.
 
   return (
-    <div style={{ textAlign: 'center', fontSize: '2rem', marginTop: '50px' }}>
+    <div className="ChristmasDay">
       <h1>🎄 Compte à rebours avant Noël 🎅</h1>
       <p>
         {timeDay.days} jours, {timeDay.hours} heures, {timeDay.minutes} minutes, {timeDay.seconds} secondes
