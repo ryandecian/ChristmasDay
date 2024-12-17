@@ -39,7 +39,6 @@ function PageChristmasDay() {
       <p>
         {timeDay.days} jours, {timeDay.hours} heures, {timeDay.minutes} minutes, {timeDay.seconds} secondes
       </p>
-      <div></div>
     </div>
   );
 };
