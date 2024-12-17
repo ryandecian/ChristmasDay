@@ -11,4 +11,4 @@ git add .
 git commit -m "$1"
 git push
 
-# Exécute maintenant la commande dans le terminal :
+# Exécute maintenant la commande dans le terminal : chmod +x git-push.sh
