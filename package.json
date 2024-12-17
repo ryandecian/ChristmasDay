@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "commit": "sh -c 'read -p \"Entrez votre message de commit : \" msg; git add . && git commit -m \"$msg\" && echo \"✅ Commit réussi, envoi sur GitHub...\" && git push || { echo \"❌ Erreur : Aucun changement détecté. Push annulé.\"; exit 1; }'"
+    "commit": "sh -c 'read -p \"Entrez votre message de commit : \" msg; git add . && git commit -m \"$msg\" && echo \"✅ Commit réussi, envoi sur GitHub...\" && git push || echo \"❌ Erreur : Aucun changement détecté. Push annulé.\"'"
   },
   "dependencies": {
     "react": "^18.3.1",
