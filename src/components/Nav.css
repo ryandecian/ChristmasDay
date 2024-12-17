@@ -1,3 +1,10 @@
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    text-align: center;
+}
+
 .NavLink {
     padding: 0.6em 2em;
     border: none;

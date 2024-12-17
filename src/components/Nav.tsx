@@ -4,12 +4,11 @@ import "./Nav.css"
 
 function Nav() {
     return (
-        <>
-        <button>Noël</button>
-        <button>Nouvel an</button>
-        <button>Noël prochain</button>
+        <nav>
         <Link to="/" className="NavLink">Noël</Link>
-        </>
+        <Link to="/page-new-year" className="NavLink">Nouvel an</Link>
+        <Link to="/" className="NavLink">Noël prochain</Link>
+        </nav>
     )
 }
 

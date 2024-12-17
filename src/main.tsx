@@ -3,6 +3,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './index.css'
 import App from './App.tsx'
 import PageChristmasDay from './pages/PageChristmasDay.tsx'
+import PageNewYear from './pages/PageNewYear.tsx'
 
 const router =  createBrowserRouter([
   {
@@ -11,6 +12,10 @@ const router =  createBrowserRouter([
       {
         path: "/",
         element: <PageChristmasDay />,
+      },
+      {
+        path: "/page-new-year",
+        element: <PageNewYear />,
       },
     ],
   },
