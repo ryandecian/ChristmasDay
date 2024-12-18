@@ -1,11 +1,17 @@
 #Attention, pour lancer cette commande il faudra : 
 
-#Lancer la commande suivante dans le terminal git :
-# chmod +x git-push.sh
-#Copier coller cette ligne dans package.json dans script :
-# "commit": "./git-push.sh"
+#Copier ce fichier à la racine du projet react
+#Créer un dossier ScriptRyanDECIAN dans le répertoire logiciel de Git/usr/bin/
+#Lancer les commandes suivantes dans le terminal git :
+# mv git-commit /usr/bin/ScriptRyanDECIAN/git-commit
+# chmod +x /usr/bin/ScriptRyanDECIAN/git-commit
+# nano ~/.bashrc
+#Copier coller cette ligne dans ~/.bashrc :
+# export PATH=$PATH:/usr/local/bin/ScriptRyanDECIAN
+#Lance la commande suivante : 
+# source ~/.bashrc
 #Exécution de cette commande avec :
-# npm run commit
+# git-commit
 
 #!/bin/bash
 
@@ -40,5 +46,5 @@ rm .gitmessage.txt
 branch=$(git rev-parse --abbrev-ref HEAD)
 
 # Pousse sur la branche courante
-echo "✅ Commit réussi, envoi sur la branche '$branch'..."
 git push origin "$branch" || { echo "❌ Erreur : Push échoué."; exit 1; }
+echo "✅ Commit réussi, envoi sur la branche '$branch'..."
