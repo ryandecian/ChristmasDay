@@ -5,7 +5,7 @@ function PageNewYear() {
   const calculateTimeDay = () => {
     const now = new Date(); //Donne la date d'aujourd'hui (Mois, Jour, Année, Heure, Min, Sec)
     //sans arguments. Si argument entre () c'est pour indiquer une date.
-    const christmas = new Date(now.getFullYear(), 11, 31);
+    const christmas = new Date(now.getFullYear(), 11, 31, 24);
     //getFullYear() permet de récupérer juste l'année en nomber. Jamais d'argument en ()
     if (now > christmas) christmas.setFullYear(now.getFullYear() + 1);
     // Noël suivant si passé : setFullYear() permet de modifier ou définir une date
